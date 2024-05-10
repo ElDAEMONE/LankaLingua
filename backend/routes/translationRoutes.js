@@ -2,6 +2,29 @@ const express = require('express');
 const router = express.Router();
 const Translation = require('../models/translationModel');
 
+// Get translations by category
+router.get('/:category', async (req, res) => {
+    const { category } = req.params;
+    try {
+        const translations = await Translation.find({ category }).exec();
+        res.json(translations);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// Save translation
+router.post('/', async (req, res) => {
+    const { title, translatedText, category } = req.body;
+    const translation = new Translation({ title, translatedText, category });
+    try {
+        const newTranslation = await translation.save();
+        res.status(201).json(newTranslation);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 // Create a translation
 router.post('/', async (req, res) => {
     try {
