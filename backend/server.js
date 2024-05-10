@@ -48,6 +48,8 @@ const jwt = require('jsonwebtoken');
 const UserModel = require("./models/user");
 const translationRoutes = require('./routes/translationRoutes');
 
+const bcrypt = require('bcrypt');
+
 const app = express();
 app.use(express.json());
 app.use(cors());

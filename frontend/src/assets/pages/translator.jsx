@@ -5,8 +5,7 @@ import TranslatingComp from "../components/Translator/TranslatingComp";
 
 const Translator = () => {
   return (
-    <div>
-      <ResponsiveAppBar />
+    <div style={{fontFamily:'Nunito'}}>
       <div className="flex flex-wrap gap-4">
         <HistoryBar />
         <TranslatingComp/>

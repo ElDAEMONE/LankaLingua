@@ -58,7 +58,7 @@ const HistoryBar = () => {
     };
 
     return (
-        <div className='bg-gray-200 h-screen p-4 w-72'>
+        <div style={{fontFamily:'Nunito'}} className='bg-gray-200 h-screen p-4 w-72'>
             <div className="mx-auto">
                 <h2 className="text-xl font-bold mb-4">History</h2>
                 {translations.map((translation) => (
