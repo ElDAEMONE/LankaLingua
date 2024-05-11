@@ -36,6 +36,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { createTheme, ThemeProvider } from "@mui/material/styles"; // Import ThemeProvider and createTheme
 import Categories from "./assets/pages/categories";
 import ResponsiveAppBar from "./assets/components/Translator/topBar";
+import Work from "./assets/pages/work";
+import Literature from "./assets/components/Categories/literatureHistoryTable";
+import Research from "./assets/components/Categories/researchHistoryTable";
+import Fiction from "./assets/components/Categories/fictionHistoryTable";
+import Essay from "./assets/components/Categories/essayHistoryTable";
 
 // Define a custom theme
 const theme = createTheme();
@@ -53,6 +58,11 @@ function App() {
             <Route path="/translator" element={<Translator />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/categories" element={<Categories/>} />
+            <Route path="/works" element={<Work/>} />
+            <Route path="/literature" element={<Literature/>} />
+            <Route path="/research" element={<Research/>} />
+            <Route path="/fiction" element={<Fiction/>} />
+            <Route path="/essay" element={<Essay/>} />
             {/* Default route */}
             <Route element={<Login />} />
           </Routes>
